@@ -16,6 +16,10 @@ const braces = (string) => {
     if (leftBraces.includes(char)) {
       stack.push(char)
     } else if (rightBraces.includes(char)) {
+      if (!stack.length) {
+        throw new Error('no pair')
+      }
+
       if (stack.pop() !== pairs[char]) {
         throw new Error('mismatch')
       }
@@ -27,4 +31,4 @@ const braces = (string) => {
   console.log('passed')
 }
 
-braces('sdf(asdf)asdf[sadf]asdf{asdf}')
+braces('sdf(asdf)asdf[sadf]asdf{asdf}asdf)')
