@@ -6,24 +6,44 @@
 </head>
 <body>
 <script>
-  const insertSort = (arr) => {
-    for (let i = 1; i < arr.length; i++) {
-      const curr = arr[i]
-
-      let prevIndex = i - 1
-      while (arr[prevIndex] > curr) {
-        arr[prevIndex + 1] = arr[prevIndex]
-
-        prevIndex--
-      }
-
-      arr[prevIndex + 1] = curr
-    }
-
-    return arr
+  const left3 = {
+    value: 4
   }
 
-  console.log(insertSort([5, 3, 6, 0, 1, 12, 90, 54, 11, 9, 2, 1, -31]))
+  const right3 = {
+    value: 5,
+  }
+
+  const left2 = {
+    value: 3,
+    left: left3,
+    right: right3
+  }
+
+  const left1 = {
+    value: 2,
+    left: left2,
+  }
+
+  const right1 = {
+    value: 6
+  }
+
+  const vertex = {
+    value: 1,
+    left: left1,
+    right: right1,
+  }
+
+  const dfs = (node) => {
+    console.log(node.value)
+
+    if (node.left) dfs(node.left)
+
+    if (node.right) dfs(node.right)
+  }
+
+  dfs(vertex)
 </script>
 </body>
 </html>
