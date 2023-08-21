@@ -35,4 +35,17 @@ const dfs = (node) => {
   if (node.right) dfs(node.right)
 }
 
+// const dfsStack = (node) => {
+//   const stack = [node]
+//
+//   while (stack.length) {
+//     const currNode = stack.shift()
+//
+//     console.log(currNode.value)
+//
+//     if (currNode.left) stack.push(currNode.left)
+//   }
+// }
+
 dfs(vertex)
+// dfsStack(vertex)
