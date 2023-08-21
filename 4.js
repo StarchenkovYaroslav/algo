@@ -48,5 +48,5 @@ const dfsStack = (node) => {
   }
 }
 
-dfs(vertex)
+// dfs(vertex)
 dfsStack(vertex)
